@@ -1,0 +1,15 @@
+spring:
+  application:
+    name: fake-api
+  cloud:
+    loadbalancer:
+      ribbon:
+        enable: true
+
+
+fake-api:
+  url: https://fakestoreapi.com
+
+
+server:
+  port: 8181
