@@ -1,7 +1,7 @@
 package br.com.ero.fakeapi.apiv1;
 
 import br.com.ero.fakeapi.apiv1.dto.ProductDTO;
-import br.com.ero.fakeapi.business.FakeApiService;
+import br.com.ero.fakeapi.business.services.FakeApiService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;

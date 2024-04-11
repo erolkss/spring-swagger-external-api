@@ -1,4 +1,4 @@
-package br.com.ero.fakeapi.insfrastructure;
+package br.com.ero.fakeapi.insfrastructure.clients;
 
 import br.com.ero.fakeapi.apiv1.dto.ProductDTO;
 import org.springframework.cloud.openfeign.FeignClient;
