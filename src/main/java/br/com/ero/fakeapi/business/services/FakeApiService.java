@@ -26,7 +26,7 @@ public class FakeApiService {
                     productService.saveProducts(productConverter.toEntity(product));
                 }
             });
-            return productConverter.toListDto(productService.getAllProducts());
+            return productService.getAllProducts();
         } catch (Exception ex) {
             throw new RuntimeException("Error returning and saving products in the database.");
         }

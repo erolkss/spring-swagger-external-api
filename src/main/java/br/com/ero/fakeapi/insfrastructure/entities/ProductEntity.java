@@ -33,4 +33,6 @@ public class ProductEntity {
     private String image;
     @Column(name = "date_inclusion")
     private LocalDateTime dateInclusion;
+    @Column(name = "date_update")
+    private LocalDateTime dateUpdate;
 }
