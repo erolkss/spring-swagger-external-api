@@ -12,7 +12,7 @@ import java.util.UUID;
 @Component
 public class ProductConverter {
 
-    public ProductEntity toEntity(ProductDTO productDTO){
+    public ProductEntity toEntity(ProductDTO productDTO) {
         return ProductEntity.builder()
                 .id(String.valueOf(UUID.randomUUID()))
                 .title(productDTO.getTitle())
@@ -24,7 +24,7 @@ public class ProductConverter {
                 .build();
     }
 
-    public ProductDTO toDto(ProductEntity productEntity){
+    public ProductDTO toDto(ProductEntity productEntity) {
         return ProductDTO.builder()
                 .entityId(productEntity.getId())
                 .title(productEntity.getTitle())
@@ -35,7 +35,20 @@ public class ProductConverter {
                 .build();
     }
 
-    public List<ProductDTO> toListDto(List<ProductEntity> entityList){
+    public ProductEntity toEntityUpdate(String id, ProductEntity productEntity, ProductDTO productDTO) {
+        return ProductEntity.builder()
+                .id(id)
+                .title(productDTO.getTitle() != null ? productDTO.getTitle() : productEntity.getTitle())
+                .category(productDTO.getCategory() != null ? productDTO.getCategory() : productEntity.getCategory())
+                .description(productDTO.getDescription() != null ? productDTO.getDescription() : productEntity.getDescription())
+                .price(productDTO.getPrice() != null ? productDTO.getPrice() : productEntity.getPrice())
+                .image(productDTO.getImage() != null ? productDTO.getImage() : productEntity.getImage())
+                .dateInclusion(productEntity.getDateInclusion())
+                .dateUpdate(LocalDateTime.now())
+                .build();
+    }
+
+    public List<ProductDTO> toListDto(List<ProductEntity> entityList) {
         return entityList.stream().map(this::toDto).toList();
     }
 
