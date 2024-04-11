@@ -1,0 +1,27 @@
+spring:
+  application:
+    name: fake-api
+  cloud:
+    loadbalancer:
+      ribbon:
+        enable: true
+  datasource:
+    url: jdbc:mysql://localhost:3306/fake_api_store
+    username: Teste
+    password: Teste@123
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        package-to-scan: br.com.ero.fakeapi.infrastructure.entities
+        format_sql: true
+
+
+fake-api:
+  url: https://fakestoreapi.com
+
+
+server:
+  port: 8181
+
