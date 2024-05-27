@@ -81,7 +81,7 @@ public class FakeApiController {
             @ApiResponse(responseCode = "500", description = "Error return product by name.")
     })
     @GetMapping("/{title}")
-    public ResponseEntity<ProductDTO> getProductByName(@PathVariable("title") String title) {
+    public ResponseEntity<ProductDTO> getProductByTitle(@PathVariable String title) {
         return ResponseEntity.ok(productService.getProductByTitle(title));
     }
 }
